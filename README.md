@@ -1,8 +1,3 @@
-# Docker_App_Deployment
-Flask app for login
-
-docker-compose with 3 services -> app/db/nginx
-
 # Projet DockerCompose avec Nginx et Prometheus
 
 Ce projet vise à déployer une application Flask avec Nginx pour la partie https et Prometheus pour la surveillance des métriques.
