@@ -36,7 +36,7 @@ Le service `prometheus` utilise l'image Prometheus ( à telecharger) et expose l
 ## Annexes
 
 ![Flask/Https](images/https_usage.png)
-![Prometheus](images/usage_prom.png.png)
+![Prometheus](images/usage_prom.png)
 
 
 
