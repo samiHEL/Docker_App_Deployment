@@ -21,7 +21,7 @@ Le service `nginx` utilise l'image Nginx ( à telecharger), exposant les ports 8
 Le service `prometheus` utilise l'image Prometheus ( à telecharger) et expose le port 9090. Il est configuré avec un fichier `prometheus.yml` situé dans `./path/to/prometheus.yml`. 
 
 ### 4. Schema
-![Architecture](images/schema_base_appli.png)
+![Architecture](images/schema_base_appli2.png)
 
 ## Exécution du projet
 
