@@ -21,7 +21,7 @@ Le service `nginx` utilise l'image Nginx ( à telecharger), exposant les ports 8
 Le service `prometheus` utilise l'image Prometheus ( à telecharger) et expose le port 9090. Il est configuré avec un fichier `prometheus.yml` situé dans `./path/to/prometheus.yml`. 
 
 ### 4. Schema
-//////// A venir 
+![Architecture](images/schema_base_appli.png)
 
 ## Exécution du projet
 
@@ -30,8 +30,17 @@ Le service `prometheus` utilise l'image Prometheus ( à telecharger) et expose l
    git clone https://github.com/samiHEL/Docker_App_Deployment.git
 2. cd Docker_App_Deployment
 3. docker-compose up -d
-4. Accédez à votre application Flask : http://localhost:5000
-5. Accédez à l'interface de monitoring Prometheus :http://localhost:9090
+4. Accédez à votre application Flask : https://localhost:5000
+5. Accédez à l'interface de monitoring Prometheus :https://localhost:9090
+
+## Annexes
+
+![Flask/Https](images/https_usage.png)
+![Prometheus](images/usage_prom.png.png)
+
+
+
+
 
 
 
