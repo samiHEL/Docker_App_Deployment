@@ -26,4 +26,12 @@ services:
       - app
     depends_on:
       - app
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prom/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    
+
 
