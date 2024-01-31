@@ -6,7 +6,7 @@ Ce projet vise à déployer une application Flask avec Nginx pour la partie http
 
 ### 1. Service app
 
-Le service `app` représente votre application Flask. Il est construit à partir du répertoire `./app` et est lié au service `db` pour la base de données. Il écoute sur le port 5000.
+Le service `app` représente votre application Flask. Il est construit à partir du répertoire `./app` et est lié au service `db` pour la base de données.
 
 ### 2. Service db
 
@@ -14,7 +14,7 @@ Le service `db` utilise l'image MySQL 5.7, exposant le port 3307.
 
 ### 3. Service nginx
 
-Le service `nginx` utilise l'image Nginx ( à telecharger), exposant les ports 80 et 443. Il est configuré avec un fichier `nginx.conf` situé dans `./nginx` et des certificats SSL dans `./nginx/certificates`.
+Le service `nginx` utilise l'image Nginx, exposant les ports 80 et 443. Il est configuré avec un fichier `nginx.conf` situé dans `./nginx` et des certificats SSL dans `./nginx/certificates`.(val 30 nov 2024)
 
 ### 4. Service prometheus
 
@@ -30,7 +30,7 @@ Le service `prometheus` utilise l'image Prometheus ( à telecharger) et expose l
    git clone https://github.com/samiHEL/Docker_App_Deployment.git
 2. cd Docker_App_Deployment
 3. docker-compose up -d
-4. Accédez à votre application Flask : https://localhost:5000
+4. Accédez à votre application Flask : https://localhost:80 -> sera redirigé sur le port 443 automatiquement 
 5. Accédez à l'interface de monitoring Prometheus :https://localhost:9090
 
 ## Annexes
