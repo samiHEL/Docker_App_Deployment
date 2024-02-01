@@ -1,7 +1,7 @@
 name: Streamlit CI
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
