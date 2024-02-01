@@ -25,11 +25,9 @@ jobs:
     - name: Run Streamlit
       run: |
         streamlit run frontend/streamlit_app.py &
-        sleep 5  # Wait for Streamlit to start
+        while ! pgrep -f "streamlit run frontend/streamlit_app.py" >/dev/null; do sleep 1; done
 
-    - name: Capture Streamlit URL
-      run: echo 'Streamlit URL - Network: http://localhost:8501 | External: http://external-ip:8501'
-
-
+    - name: Stop le workflow
+      run: exit 0
 
 
