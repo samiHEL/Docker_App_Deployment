@@ -11,3 +11,5 @@ INSERT INTO test_table
 VALUES
   ('admin', 'admin'),
   ('user', 'user');
+
+
