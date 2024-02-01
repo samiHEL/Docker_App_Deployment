@@ -1,10 +1,10 @@
-# Projet DockerCompose avec Nginx et Prometheus
+# Projet DockerCompose FRONT Streamlit BACK Flask BDD Mysql
 
-Ce projet vise à déployer une application Flask avec Nginx pour la partie https et Prometheus pour la surveillance des métriques.
+Ce projet vise à déployer une application Flask qui posséde un front streamlit et une bdd mysl ( Requete Api entre le front et le back )
 
 ## Services inclus dans le docker-compose.yml
 
-### 1. Service app
+### 1. Service backend
 
 Le service `app` représente votre application Flask. Il est construit à partir du répertoire `./app` et est lié au service `db` pour la base de données.
 
@@ -16,12 +16,13 @@ Le service `db` utilise l'image MySQL 5.7, exposant le port 3307.
 
 Le service `nginx` utilise l'image Nginx, exposant les ports 80 et 443. Il est configuré avec un fichier `nginx.conf` situé dans `./nginx` et des certificats SSL dans `./nginx/certificates`.(val 30 nov 2024)
 
-### 4. Service prometheus
+### 4. Service frontend
 
-Le service `prometheus` utilise l'image Prometheus ( à telecharger) et expose le port 9090. Il est configuré avec un fichier `prometheus.yml` situé dans `./path/to/prometheus.yml`. 
+Partie Streamlit faisant des appels api depuis l'endpoint http://backend:5000/ .
 
 ### 4. Schema
-![Architecture](images/schema_base_appli2.png)
+![Architecture](images/login.png)
+![Architecture](images/updateLogin.png)
 
 ## Exécution du projet
 
@@ -30,13 +31,12 @@ Le service `prometheus` utilise l'image Prometheus ( à telecharger) et expose l
    git clone https://github.com/samiHEL/Docker_App_Deployment.git
 2. cd Docker_App_Deployment
 3. docker-compose up -d
-4. Accédez à votre application Flask : https://localhost:80 -> sera redirigé sur le port 443 automatiquement 
-5. Accédez à l'interface de monitoring Prometheus :https://localhost:9090
+
 
 ## Annexes
 
-![Flask/Https](images/https_usage.png)
-![Prometheus](images/usage_prom.png)
+![Flask/Https](images/json.png)
+![Prometheus](images/erreurLogin.png)
 
 
 
