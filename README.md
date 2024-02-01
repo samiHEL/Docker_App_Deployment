@@ -12,16 +12,15 @@ Le service `app` représente votre application Flask. Il est construit à partir
 
 Le service `db` utilise l'image MySQL 5.7, exposant le port 3307.
 
-### 3. Service nginx
-
-Le service `nginx` utilise l'image Nginx, exposant les ports 80 et 443. Il est configuré avec un fichier `nginx.conf` situé dans `./nginx` et des certificats SSL dans `./nginx/certificates`.(val 30 nov 2024)
 
 ### 4. Service frontend
 
 Partie Streamlit faisant des appels api depuis l'endpoint http://backend:5000/ .
 
-### 4. Schema
+### 5. Login
 ![Architecture](images/login.png)
+
+### 6. Update Login
 ![Architecture](images/updateLogin.png)
 
 ## Exécution du projet
@@ -35,7 +34,10 @@ Partie Streamlit faisant des appels api depuis l'endpoint http://backend:5000/ .
 
 ## Annexes
 
+### Json
 ![Flask/Https](images/json.png)
+
+### Exemple erreur 
 ![Prometheus](images/erreurLogin.png)
 
 
