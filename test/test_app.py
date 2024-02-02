@@ -14,7 +14,7 @@
 import pytest
 import requests
 #from frontend.streamlit_app import API_ENDPOINT
-API_ENDPOINT = 'http://localhost:5000'
+API_ENDPOINT = 'http://127.0.0.1:5000'
 def test_api_response_not_empty():
     # Faire l'appel à l'API
     response = requests.get(API_ENDPOINT)
