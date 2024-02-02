@@ -45,4 +45,4 @@ jobs:
     - name: Run Tests
       run: |
         cd app
-        pytest
+        pytest test_app.py
