@@ -34,14 +34,11 @@ jobs:
         python -m pip install --upgrade pip 
         pip install -r app/requirements.txt
         pip install pytest
-
+    - name: Build and run docker-compose
+      run: |
+        docker-compose up --build -d
     - name: Start Flask app
       run: |
-        until nc -zv 127.0.0.1 3307
-        do
-          echo "Waiting for database..."
-          sleep 1
-        done
         python app/init_db.py  # Si nécessaire, initialisez la base de données
         python app/app.py &   # Lancez l'application Flask en arrière-plan
 
