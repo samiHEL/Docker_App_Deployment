@@ -1,4 +1,4 @@
-create database devopsroles;
+CREATE DATABASE IF NOT EXISTS devopsroles;
 use devopsroles;
 
 CREATE TABLE test_table (
