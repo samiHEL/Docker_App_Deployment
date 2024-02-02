@@ -36,12 +36,6 @@ jobs:
       run: |
         python app/init_db.py
 
-    - name: Wait for database to be ready
-      run: |
-        while ! mysqladmin ping -hlocalhost -uroot -proot --silent; do
-          sleep 1
-        done
-
     - name: Run back
       run: |
         python app/app.py
