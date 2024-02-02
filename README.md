@@ -5,6 +5,12 @@
 
 Ce projet vise à déployer une application Flask qui posséde un front streamlit et une bdd mysl ( Requete Api entre le front et le back )
 
+### 5. Workflow
+![Architecture](images/schema1.png)
+
+### 5. Schema projet
+![Architecture](images/schema1.png)
+
 ## Services inclus dans le docker-compose.yml
 
 ### 1. Service backend
