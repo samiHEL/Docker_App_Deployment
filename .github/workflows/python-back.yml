@@ -1,0 +1,29 @@
+name: Back-end Tests
+
+on:
+  push:
+    branches:
+      - main  # Vous pouvez ajuster la branche selon vos besoins
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Choisissez l'image selon votre besoin (linux, windows, macos)
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8  # Choisissez la version de Python selon vos besoins
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip &
+        pip install -r app/requirements.txt &
+        python app/init_db.py && app/python app.py
+    - name: Run Tests
+      run: |
+        cd app
+        pytest
