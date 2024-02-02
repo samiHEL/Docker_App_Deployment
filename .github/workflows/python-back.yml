@@ -38,7 +38,7 @@ jobs:
 
     - name: Run back
       run: |
-        python app/app.py
+        python app/app.py &
         sleep 10  # Ajoutez une pause pour permettre au backend de démarrer
 
     - name: Run Tests
