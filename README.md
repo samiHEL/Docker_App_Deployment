@@ -9,7 +9,7 @@ Ce projet vise à déployer une application Flask qui posséde un front streamli
 ![Architecture](images/schema1.png)
 
 ### 5. Schema projet
-![Architecture](images/schema1.png)
+![Architecture](images/schema2.png)
 
 ## Services inclus dans le docker-compose.yml
 
