@@ -9,15 +9,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      db:
-        image: mysql:5.7
-        ports:
-          - "3307:3306"
-        env:
-          MYSQL_ROOT_PASSWORD: root
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
@@ -32,6 +23,10 @@ jobs:
         python -m pip install --upgrade pip 
         pip install -r app/requirements.txt
         pip install pytest
+    - name: Set up MySQL schema and data
+      run: |
+        mysql -h 127.0.0.1 -P 3307 -u root -proot -e "CREATE DATABASE devopsroles;"
+        mysql -h 127.0.0.1 -P 3307 -u root -proot devopsroles < db/init.sql
 
     - name: Initialize Database
       run: |
@@ -43,7 +38,7 @@ jobs:
         sleep 10  # Ajoutez une pause pour permettre au backend de démarrer
     - name: Check backend accessibility
       run: |
-        curl -v http://localhost:5000/api/get_data
+        curl -v http://127.0.0.1:5000/api/get_data
     - name: Run Tests
       run: |
         pytest test/test_app.py
