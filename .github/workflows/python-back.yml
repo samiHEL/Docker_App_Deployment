@@ -23,9 +23,9 @@ jobs:
         python -m pip install --upgrade pip 
         pip install -r app/requirements.txt
         pip install pytest
-    - name: Build and run docker-compose
+    - name: Run back
       run: |
-        docker-compose up --build -d
+        python app/app.py
 
     - name: Run Tests
       run: |
