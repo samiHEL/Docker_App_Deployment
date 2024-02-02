@@ -29,4 +29,4 @@ jobs:
 
     - name: Run Tests
       run: |
-        docker-compose exec backend pytest test/test_app.py
+        pytest test/test_app.py
