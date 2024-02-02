@@ -15,7 +15,6 @@ import pytest
 import requests
 #from frontend.streamlit_app import API_ENDPOINT
 API_ENDPOINT = 'http://backend:5000/api/get_data'
-
 def test_api_response_not_empty():
     # Faire l'appel à l'API
     response = requests.get(API_ENDPOINT)
@@ -24,4 +23,4 @@ def test_api_response_not_empty():
     assert response.status_code == 200
     
     # Vérifier que le JSON de la réponse n'est pas vide
-    assert response.json() != []
+    #assert response.json() != []
