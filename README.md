@@ -1,5 +1,9 @@
 [![Streamlit CI](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/python-publish.yml/badge.svg)](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/python-publish.yml)
+
+[![Back-end Tests](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/python-back.yml/badge.svg)](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/python-back.yml)
+
 [![Build Backend Docker Image](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/docker-image.yml/badge.svg)](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/docker-image.yml)
+
 [![Build Frontend Docker Image](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/docker-image-front.yml/badge.svg)](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/docker-image-front.yml)
 # Projet DockerCompose FRONT Streamlit BACK Flask BDD Mysql
 
