@@ -33,9 +33,10 @@ jobs:
         pip install -r app/requirements.txt
         pip install pytest
 
-    - name: Initialize Database
+    - name: Set up MySQL schema and data
       run: |
-        python app/init_db.py
+        mysql -h 127.0.0.1 -P 3307 -u root -proot -e "CREATE DATABASE devopsroles;"
+        mysql -h 127.0.0.1 -P 3307 -u root -proot devopsroles < db/init.sql
 
     - name: Run back
       run: |
