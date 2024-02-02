@@ -3,11 +3,20 @@ name: Back-end Tests
 on:
   push:
     branches:
-      - main  # Vous pouvez ajuster la branche selon vos besoins
+      - main
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Choisissez l'image selon votre besoin (linux, windows, macos)
+    runs-on: ubuntu-latest
+
+    services:
+      db:
+        image: mysql:5.7
+        ports:
+          - "3307:3306"
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
     - name: Checkout Repository
@@ -16,15 +25,27 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8  # Choisissez la version de Python selon vos besoins
+        python-version: 3.8
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip 
         pip install -r app/requirements.txt 
+
+    - name: Initialize Database
+      run: |
+        python app/init_db.py
+
+    - name: Wait for database to be ready
+      run: |
+        while ! mysqladmin ping -hlocalhost -uroot -proot --silent; do
+          sleep 1
+        done
+
     - name: Run back
       run: |
-        python app/init_db.py && app/python app.py
+        python app/app.py
+
     - name: Run Tests
       run: |
         cd app
