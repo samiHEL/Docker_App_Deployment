@@ -9,6 +9,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+      db:
+        image: mysql:5.7
+        ports:
+          - "3307:3306"
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
@@ -23,8 +32,15 @@ jobs:
         python -m pip install --upgrade pip 
         pip install -r app/requirements.txt
         pip install pytest
-    - name: Start containers
-      run: docker-compose -f "docker-compose.yml" up -d --build &
+
+    - name: Initialize Database
+      run: |
+        python app/init_db.py
+
+    - name: Run back
+      run: |
+        python app/app.py &
+        sleep 10  # Ajoutez une pause pour permettre au backend de démarrer
 
     - name: Run Tests
       run: |
