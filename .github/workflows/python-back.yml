@@ -41,7 +41,9 @@ jobs:
       run: |
         python app/app.py &
         sleep 10  # Ajoutez une pause pour permettre au backend de démarrer
-
+    - name: Check backend accessibility
+      run: |
+        curl -v http://localhost:5000/api/get_data
     - name: Run Tests
       run: |
         pytest test/test_app.py
