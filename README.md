@@ -1,4 +1,6 @@
 [![Streamlit CI](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/python-publish.yml/badge.svg)](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/python-publish.yml)
+[![Build Backend Docker Image](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/docker-image.yml/badge.svg)](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/docker-image.yml)
+[![Build Frontend Docker Image](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/docker-image-front.yml/badge.svg)](https://github.com/samiHEL/Docker_App_Deployment/actions/workflows/docker-image-front.yml)
 # Projet DockerCompose FRONT Streamlit BACK Flask BDD Mysql
 
 Ce projet vise à déployer une application Flask qui posséde un front streamlit et une bdd mysl ( Requete Api entre le front et le back )
