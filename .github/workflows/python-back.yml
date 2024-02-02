@@ -35,19 +35,15 @@ jobs:
         pip install -r app/requirements.txt
         pip install pytest
 
-    - name: Wait for database
+    - name: Start Flask app
       run: |
         until nc -zv 127.0.0.1 3307
         do
           echo "Waiting for database..."
           sleep 1
         done
-
-    - name: Start Flask app
-      run: |
-        cd app
-        python init_db.py  # Si nécessaire, initialisez la base de données
-        python app.py &   # Lancez l'application Flask en arrière-plan
+        python app/init_db.py  # Si nécessaire, initialisez la base de données
+        python app/app.py &   # Lancez l'application Flask en arrière-plan
 
     - name: Run Tests
       run: |
